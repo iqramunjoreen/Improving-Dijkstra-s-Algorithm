@@ -1,0 +1,27 @@
+My program consists of 2 classes - vertex and PQ
+
+1. vertex are the nodes of the graph. they each have their own attributes- parent (another vertex object),
+   distance from parent, estimated distance to destination, a key (their node number), adjacencies (array
+   of adjacent vertex objects), node_count (how many nodes did it take to get here from source?) and so on
+
+2. PQ is the priority class. it contains a queue of vertex objects and several internal functions e.g isEmpty,
+   pop_dijkstra (pops item with least distance from source), pop_astar (pops item with least distance from
+   source AND least estimated distance to destination), exists(key) (where the existence of a vertex is
+   confirmed based on its key)
+
+   functions named Dijkstra and a_star are included.
+
+   Dijkstra:
+
+   distance attribute of source vertex is set to 0. vertex is marked visited. all the adjacent nodes are
+   found and their distance from the source is calculated. they are all added to the priority queue. the
+   node with the least distance is popped and visited. entire process is repeated by recursion until
+   destination is reached. during this process if a better distance is found for a vertex, it is updated.
+
+   a_star:
+
+   distance attribute of source vertex is set to 0. vertex is marked visited. all the adjacent nodes are
+   found and their distance from the source is calculated. they are all added to the priority queue. the
+   node with the least 'distance from source + estimated distance to destination' is popped and visited.
+   entire process is repeated by recursion until destination is reached. during this process if a better
+   distance is found for a vertex, it is updated.
